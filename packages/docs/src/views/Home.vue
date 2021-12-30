@@ -4,7 +4,7 @@
     <github-corner
       url="https://github.com/fazendadosoftware/lxr-ui"
       :size="80"
-      :corner-color="'#151513'"
+      :corner-color="'#1e22aa'"
       :git-color="'white'"
     />
     <v-row class="flex bg-gradient-to-br from-indigo-100 min-h-screen" justify="center">
