@@ -1,7 +1,7 @@
 <template>
   <div
     v-clickoutside="hideSidebar"
-    class="sidebar fixed left-0 box-border flex flex-col w-[15rem] bg-[#fafbfd] border-[#d3dae6] border-r h-full transition-all duration-[0.18s]"
+    class="sidebar select-none fixed left-0 box-border flex flex-col w-[15rem] bg-[#fafbfd] border-[#d3dae6] border-r h-full transition-all duration-[0.18s]"
     :style="{ left, zIndex }">
     <it-button class="burger" :icon="left === 'inherit' ? 'menu' : 'close'" @click="toggleSidebar" />
     <div class="px-[12px] py-[20px] bg-white border-[#d3dae6] border-b">
@@ -9,7 +9,7 @@
         <img class="w-full" src="../assets/img/eqqqual.png" />
       </router-link>
       <div class="mt-4 flex flex-col">
-        <a target="_blank" class="flex" rel="noopener noreferrer" href="https://github.com/quatrochan/Equal">
+        <a target="_blank" class="flex" rel="noopener noreferrer" href="https://github.com/fazendadosoftware/lxr-ui">
           <it-button size="small" block>
             <img src="../assets/img/github-logo.svg" class="mr-2 h-3" alt srcset />Github
           </it-button>
@@ -55,7 +55,7 @@
           >
             <router-link :to="component.route">
               <span class="flex p-2">
-                <it-icon :outlined="component.icon_outlined" :name="component.icon" class="mr-2" />
+                <it-icon :name="component.icon" class="mr-2" />
                 {{ component.name }}
               </span>
             </router-link>
@@ -65,6 +65,7 @@
       <li class="group-title-high">
         Tutorials
       </li>
+      <div class="ml-10 italic text-xs text-gray-500">Coming soon...</div>
     </ul>
   </div>
 </template>
@@ -114,10 +115,10 @@ const hideSidebar = () => {
 
 <style scoped>
 .group-title {
-  @apply text-base font-semibold !pt-[16px] !pr-[0px] !pb-[5px] !pl-[30px];
+  @apply select-none cursor-default text-sm font-semibold text-gray-800 !pt-[16px] !pr-[0px] !pb-[5px] !pl-[30px];
 }
 .group-title-high {
-  @apply uppercase text-base font-semibold tracking-[1px] !pt-[20px] !pr-[0px] !pb-[5px] !pl-[30px];
+  @apply select-none cursor-default uppercase text-base font-semibold tracking-[1px] !pt-[20px] !pr-[0px] !pb-[5px] !pl-[30px];
 }
 
 .burger {
@@ -152,7 +153,7 @@ const hideSidebar = () => {
   }
 }
 .active-menu-item {
-  font-weight: 500;
+  @apply font-bold;
   transition: all 0.3s;
   > a {
     color: #131313 !important;
@@ -163,7 +164,7 @@ const hideSidebar = () => {
   }
   span {
     @apply rounded p-2 w-full;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 6px,
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 3px,
       rgba(50, 50, 93, 0.1) 0px 7px 14px, rgba(50, 50, 93, 0.05) 0px 0px 0px 1px;
   }
 }

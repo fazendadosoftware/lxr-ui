@@ -1,6 +1,6 @@
 <template>
   <div class="table-box border border-[#d3dae6] rounded-[4px] flex flex-col box-border overflow-x-auto overflow-y-hidden">
-    <h2 v-if="dataSheet" class="py-4 px-6 leading-none">
+    <h2 v-if="dataSheet" class="py-4 px-6 leading-none bg-white">
       Props <it-tag v-if="tagName">{{ tagName }}</it-tag>
     </h2>
     <table v-if="dataSheet" class="table w-full border-collapse bg-white">
@@ -44,7 +44,7 @@
       </tbody>
     </table>
 
-    <h2 v-if="slotSheet" class="py-4 px-6 leading-none">Slots</h2>
+    <h2 v-if="slotSheet" class="py-4 px-6 leading-none bg-white">Slots</h2>
     <table v-if="slotSheet" class="table">
       <thead>
         <tr>
@@ -69,7 +69,7 @@
       </tbody>
     </table>
 
-    <h2 v-if="methodSheet" class="py-4 px-6 leading-none">Methods</h2>
+    <h2 v-if="methodSheet" class="py-4 px-6 leading-none bg-white">Methods</h2>
     <table v-if="methodSheet" class="table">
       <thead>
         <tr>
@@ -99,8 +99,8 @@
       </tbody>
     </table>
 
-    <h2 v-if="eventSheet" class="py-4 px-6 leading-none">Events</h2>
-    <table v-if="eventSheet" class="table">
+    <h2 v-if="eventSheet" class="py-4 px-6 leading-none bg-white">Events</h2>
+    <table v-if="eventSheet" class="table bg-white">
       <thead>
         <tr>
           <th>

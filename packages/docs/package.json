@@ -8,6 +8,8 @@
     "lint": "eslint ./src --ext js,ts,tsx --max-warnings 0 --fix"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.4.2",
+    "@heroicons/vue": "^1.0.5",
     "autoprefixer": "^10.4.0",
     "equal-vue": "^0.79.3",
     "postcss": "^8.4.5",

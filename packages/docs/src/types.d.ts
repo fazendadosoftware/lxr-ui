@@ -1,8 +1,8 @@
 export enum ComponentGroup {
-  Base = 'Base',
+  // Base = 'Base',
   // Form = 'Form',
   // Feedback = 'Feedback',
-  // DataDisplay = 'Data Display',
+  DataDisplay = 'Data Display',
   // Navigation = 'Navigation',
 }
 
@@ -12,5 +12,4 @@ export interface IComponentListItem {
   iconOutlined?: boolean
   route: string
   group: ComponentGroup
-  examples?: number
 }
