@@ -1,0 +1,24 @@
+{
+  "name": "lxr-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "./packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"npm run dev -w docs\" \"npm run dev -w lxr-ui\"",
+    "build:library": "npm run build -w lxr-ui",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chance": "^1.1.3",
+    "concurrently": "^6.5.1"
+  },
+  "dependencies": {
+    "chance": "^1.1.8"
+  }
+}
