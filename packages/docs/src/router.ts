@@ -8,7 +8,7 @@ const routes = [
     children: [
       {
         path: '',
-        component: Views.Landing
+        component: Views.LandingPage
       },
       {
         path: 'introduction',

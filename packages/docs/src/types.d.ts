@@ -12,4 +12,5 @@ export interface IComponentListItem {
   iconOutlined?: boolean
   route: string
   group: ComponentGroup
+  examples: number
 }

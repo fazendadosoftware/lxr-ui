@@ -5,6 +5,7 @@ export const componentsList: IComponentListItem[] = [
     name: 'LxrTable',
     icon: 'view_module',
     route: '/components/lxr-table',
-    group: ComponentGroup.DataDisplay
+    group: ComponentGroup.DataDisplay,
+    examples: 3
   }
 ]
