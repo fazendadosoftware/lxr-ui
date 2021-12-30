@@ -31,7 +31,7 @@ Lxr-UI is a Vue 3 Component Library for Building LeanIX Custom Reports.
 
 # Links
 
-<b> Twitter: </b> [@lxr-ui](https://twitter.com/lxr_ui)
+<b> Twitter: </b> [@lxr_ui](https://twitter.com/lxr_ui)
 
 # Install
 
