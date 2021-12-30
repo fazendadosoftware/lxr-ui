@@ -6,7 +6,7 @@
     <it-button class="burger" :icon="left === 'inherit' ? 'menu' : 'close'" @click="toggleSidebar" />
     <div class="px-[12px] py-[20px] bg-white border-[#d3dae6] border-b">
       <router-link to="/" class="logo-link">
-        <img class="w-full px-6 py-4" src="../assets/img/lxrui-logo.svg" />
+        <img class="w-full px-6 py-4" src="../assets/img/lxr-ui-logo.svg" />
       </router-link>
       <div class="mt-4 flex flex-col">
         <a target="_blank" class="flex" rel="noopener noreferrer" href="https://github.com/fazendadosoftware/lxr-ui">
