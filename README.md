@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://fazendadosoftware.github.io/lxr-ui/">
-    <img width="300" src="https://raw.githubusercontent.com/fazendadosoftware/lxr-ui/develop/packages/docs/src/assets/img/lxr-ui-logo.svg">
+    <img width="200" src="https://raw.githubusercontent.com/fazendadosoftware/lxr-ui/develop/packages/docs/src/assets/img/lxr-ui-logo.svg">
   </a>
 
 <p align="center">
