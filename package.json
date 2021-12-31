@@ -1,8 +1,12 @@
 {
   "name": "lxr-ui",
   "version": "0.1.0",
-  "description": "A Vue Component Library for LeanIX Custom Reports",
-  "main": "index.js",
+  "homepage": "https://www.lxr-ui.com",
+  "description": "A Vue 3 Component Library for Building LeanIX Custom Reports ",
+  "author": {
+    "name": "Paulo dos Santos",
+    "email": "paulo@fazendadosoftware.com"
+  },
   "workspaces": [
     "./packages/*"
   ],
@@ -14,13 +18,8 @@
     "deploy:docs": "npm run deploy -w docs",
     "preview:docs": "npm run build -w docs && npm run preview -w docs"
   },
-  "author": {
-    "name": "Paulo dos Santos",
-    "email": "paulo@fazendadosoftware.com"
-  },
   "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
     "concurrently": "^6.5.1"
   }
 }

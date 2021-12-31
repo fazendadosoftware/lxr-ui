@@ -8,7 +8,7 @@
         Vue 3 Component Library for Building LeanIX Custom Reports
       </h4>
       <div class="buttons-group">
-        <router-link to="/start">
+        <router-link :to="{ name: 'gettingStarted' }">
           <it-button type="primary" size="big" pulse>Get started</it-button>
         </router-link>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/fazendadosoftware/lxr-ui">

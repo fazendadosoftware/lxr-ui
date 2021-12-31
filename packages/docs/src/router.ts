@@ -8,22 +8,26 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'landingPage',
         component: Views.LandingPage
       },
       {
-        path: '/introduction',
+        path: 'introduction',
+        name: 'introduction',
         component: Views.Introduction
       },
       {
-        path: '/start',
+        path: 'getting-started',
+        name: 'gettingStarted',
         component: Views.GettingStarted
       },
       {
-        path: '/components',
+        path: 'components',
         component: Views.Components,
         children: [
           {
             path: 'lxr-table',
+            name: 'lxrTable',
             component: Views.LxrTable
           }
         ]

@@ -5,7 +5,7 @@
     :style="{ left, zIndex }">
     <it-button class="burger" :icon="left === 'inherit' ? 'menu' : 'close'" @click="toggleSidebar" />
     <div class="px-[12px] py-[20px] bg-white border-[#d3dae6] border-b">
-      <router-link to="/" class="logo-link">
+      <router-link :to="{ name: 'landingPage' }" class="logo-link">
         <img class="w-full px-6 py-2" src="../assets/img/lxr-ui-logo.svg" />
       </router-link>
       <div class="mt-4 flex flex-col">
@@ -27,18 +27,18 @@
       <li class="group-title-high">
         General
       </li>
-      <li :class="{ 'active-menu-item': $route.path === '/introduction' }" @click="hideSidebar">
-        <router-link to="/introduction">
+      <li :class="{ 'active-menu-item': $route.name === 'introduction' }" @click="hideSidebar">
+        <router-link :to="{ name: 'introduction' }">
           <span class="flex p-2">
             <it-icon outlined name="emoji_people" class="mr-2" />
             Introduction
           </span>
         </router-link>
       </li>
-      <li :class="{ 'active-menu-item': $route.path === '/start' }" @click="hideSidebar">
-        <router-link to="/start">
+      <li :class="{ 'active-menu-item': $route.name === 'gettingStarted' }" @click="hideSidebar">
+        <router-link :to="{ name: 'gettingStarted' }">
           <span class="flex p-2">
-            <it-icon outlined name="whatshot" class="mr-2"></it-icon>
+            <it-icon outlined name="whatshot" class="mr-2" />
             Getting started
           </span>
         </router-link>
@@ -50,12 +50,10 @@
         <li class="group-title">{{ key }}</li>
         <template v-for="(component, i) in item as any" :key="i">
           <li
-            :class="{
-              'active-menu-item': $route.path === component.route,
-            }"
+            :class="{ 'active-menu-item': $route.name === component.routeName }"
             @click="hideSidebar"
           >
-            <router-link :to="component.route">
+            <router-link :to="{ name: component.routeName }">
               <span class="flex p-2">
                 <it-icon :name="component.icon" class="mr-2" />
                 {{ component.name }}

@@ -10,7 +10,7 @@ export interface IComponentListItem {
   name: string
   icon: string
   iconOutlined?: boolean
-  route: string
+  routeName: string
   group: ComponentGroup
   examples: number
 }
