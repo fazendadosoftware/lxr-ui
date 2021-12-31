@@ -14,9 +14,9 @@ import PropsTable from './components/PropsTable.vue'
 
 import { clickOutside } from './directives'
 
-import './index.less'
+import './styles/main.css'
+import './styles/prism-tomorrow.css'
 import 'equal-vue/dist/style.css'
-import '@fontsource/inter'
 
 const app = createApp(App)
   .directive('clickoutside', clickOutside)

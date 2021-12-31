@@ -1,9 +1,9 @@
 <template>
-  <div class="table-box border border-[#d3dae6] rounded-[4px] flex flex-col box-border overflow-x-auto overflow-y-hidden">
-    <h2 v-if="dataSheet" class="py-4 px-6 leading-none">
-      Props <it-tag v-if="tagName">{{ tagName }}</it-tag>
-    </h2>
-    <table v-if="dataSheet" class="table w-full border-collapse bg-white">
+  <article class="border border-[#d3dae6] rounded-[4px] flex flex-col box-border overflow-x-auto overflow-y-hidden prose max-w-none bg-white">
+    <h1 class="font-bold text-xl py-4 px-6 leading-none">
+      Props <it-tag v-if="tagName" class="ml-1">{{ tagName }}</it-tag>
+    </h1>
+    <table class="table w-full border-collapse">
       <thead class="bg-[#fafbfd] border-[#f2f7ff] border-t border-b">
         <tr>
           <th>
@@ -44,7 +44,7 @@
       </tbody>
     </table>
 
-    <h2 v-if="slotSheet" class="py-4 px-6 leading-none">Slots</h2>
+    <h1 v-if="slotSheet" class="mt-5 font-bold text-xl py-4 px-6 leading-none">Slots</h1>
     <table v-if="slotSheet" class="table">
       <thead>
         <tr>
@@ -69,7 +69,7 @@
       </tbody>
     </table>
 
-    <h2 v-if="methodSheet" class="py-4 px-6 leading-none">Methods</h2>
+    <h1 v-if="methodSheet" class="mt-5 font-bold text-xl py-4 px-6 leading-none">Methods</h1>
     <table v-if="methodSheet" class="table">
       <thead>
         <tr>
@@ -99,7 +99,7 @@
       </tbody>
     </table>
 
-    <h2 v-if="eventSheet" class="py-4 px-6 leading-none">Events</h2>
+    <h1 v-if="eventSheet" class="mt-5 font-bold text-xl py-4 px-6 leading-none">Events</h1>
     <table v-if="eventSheet" class="table">
       <thead>
         <tr>
@@ -168,7 +168,7 @@
         </it-button>
       </template>
     </it-modal>
-  </div>
+  </article>
 </template>
 
 <script lang="ts" setup>

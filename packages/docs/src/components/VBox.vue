@@ -1,13 +1,13 @@
 <template>
   <div
-    class="it-box bg-white rounded flex flex-col my-10 box-border w-full"
+    class="it-box not-prose bg-white rounded flex flex-col my-10 box-border w-full"
     :class="{ 'overflow-hidden': overflowHidden }">
-    <h2 class="it-box-title py-4 px-6 leading-none">
+    <h2 class="font-bold text-xl mt-4 py-4 px-6 leading-none">
       {{ title }}
     </h2>
     <slot name="description" />
     <div
-      class="it-box-scene w-full py-10 px-6 flex-wrap leading-none flex justify-center items-center box-border">
+      class="it-box-scene w-full p-6 flex-wrap leading-none flex justify-center items-center box-border">
       <slot />
     </div>
 

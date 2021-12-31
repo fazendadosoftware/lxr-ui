@@ -1,7 +1,13 @@
 <template>
   <div class="page">
     <sidebar />
-    <v-row class="flex" justify="center">
+    <github-corner
+      url="https://github.com/fazendadosoftware/lxr-ui"
+      :size="80"
+      :corner-color="'#1e22aa'"
+      :git-color="'white'"
+    />
+    <v-row class="flex bg-gradient-to-br from-indigo-100 min-h-screen" justify="center">
       <v-col class="flex flex-col my-12" lg="9" sm="10" xs="11">
         <router-view />
       </v-col>
@@ -11,6 +17,7 @@
 
 <script lang="ts" setup>
 import Sidebar from '../components/Sidebar.vue'
+import GithubCorner from '../components/GithubCorner.vue'
 </script>
 
 <style lang="less">

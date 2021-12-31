@@ -1,27 +1,27 @@
 <template>
-  <div>
+  <article class="prose prose-a:text-blue-600 prose-a:font-bold prose-a:no-underline max-w-none">
     <h1>Introduction</h1>
-    <div class="it-text-box">
-      <h2 class="mb-4">Hello!</h2>
+    <div class="bg-white py-4 px-8 rounded-md shadow">
+      <h2>Hi there Developer!</h2>
       <p>
-        <b>Equal UI</b> is a components framework for Vue 3 based on TypeScript.
-        Right now we are in the middle of the road to the stable version. Our
-        team really looking forward for the time when Equal UI could be used in
-        the real projects and we would be really glad to see you contribute to
-        the project.
+        <b>Lxr-UI</b> is a Component Library for Vue 3. It is intended to speed up the development process of LeanIX Custom Reports.
+        <br>We try as much as possible to mimic the look and feel of the native LeanIX UI in our components, so that you can create professionally looking reports
+        with minimal overhead.
       </p>
-      <h2 class="my-5">How to Contribute</h2>
+      <h2>How to Contribute</h2>
       <p>
-        Contributions to Equal UI on Github are appreciated! Whether you have
-        questions, concerns, or suggestions for improving Equal UI - please
+        Contributions to <span class="font-bold">Lxr-UI</span> on Github are appreciated!
+        <br>
+        Whether you have
+        questions, concerns, or suggestions for improving <span class="font-bold">Lxr-UI</span> - please
         don't hesitate to reach out to us
         <a
-          href="https://github.com/quatrochan/Equal/issues"
+          href="https://github.com/fazendadosoftware/lxr-ui/issues"
           target="_blank"
-          rel="noopener noreferrer"
-          >here</a
-        >
+          rel="noopener noreferrer">
+          here
+        </a>.
       </p>
     </div>
-  </div>
+  </article>
 </template>
