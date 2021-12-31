@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently --kill-others \"npm run dev -w docs\" \"npm run dev -w lxr-ui\"",
     "build:library": "npm run build -w lxr-ui",
-    "lint": "npm run lint --workspaces --if-present"
+    "lint": "npm run lint --workspaces --if-present",
+    "deploy:docs": "npm run deploy -w docs",
+    "preview:docs": "npm run build -w docs && npm run preview -w docs"
   },
   "author": {
     "name": "Paulo dos Santos",

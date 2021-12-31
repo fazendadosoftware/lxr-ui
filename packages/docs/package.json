@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint ./src --ext js,ts,tsx --max-warnings 0 --fix"
+    "lint": "eslint ./src --ext js,ts,tsx --max-warnings 0 --fix",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@headlessui/vue": "^1.4.2",
@@ -19,7 +20,6 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@fontsource/inter": "^4.5.1",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "@vitejs/plugin-vue": "^2.0.0",

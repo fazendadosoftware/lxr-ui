@@ -11,12 +11,14 @@
       <div class="mt-4 flex flex-col">
         <a target="_blank" class="flex" rel="noopener noreferrer" href="https://github.com/fazendadosoftware/lxr-ui">
           <it-button size="small" block>
-            <img src="../assets/img/github-logo.svg" class="mr-2 h-3" alt srcset />Github
+            <img src="../assets/img/github-logo.svg" class="mr-2 h-3"/>
+            Github
           </it-button>
         </a>
         <a target="_blank" class="flex mt-2" rel="noopener noreferrer" href="https://twitter.com/lxr_ui">
           <it-button size="small" block>
-            <img src="../assets/img/twitter-logo.svg" class="mr-2 h-3" alt srcset />Twitter
+            <img src="../assets/img/twitter-logo.svg" class="mr-2 h-3"/>
+            Twitter
           </it-button>
         </a>
       </div>
@@ -46,7 +48,7 @@
       </li>
       <template v-for="(item, key) in componentGroups" :key="key">
         <li class="group-title">{{ key }}</li>
-        <template v-for="(component, i) in item" :key="i">
+        <template v-for="(component, i) in item as any" :key="i">
           <li
             :class="{
               'active-menu-item': $route.path === component.route,

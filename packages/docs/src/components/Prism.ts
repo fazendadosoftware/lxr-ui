@@ -36,6 +36,7 @@ export default defineComponent({
       (ctx.children && ctx.children.length > 0 ? ctx.children[0].text : '')
     const inline = ctx.$props.inline
     const language = ctx.$props.language
+    // @ts-ignore
     const prismLanguage = Prism.languages[language]
     const className = 'language-'.concat(language)
 
@@ -51,9 +52,12 @@ export default defineComponent({
     if (inline) {
       return h(
         'code',
+        // @ts-ignore
         assign({}, ctx.$data, {
           class: [ctx.$data.class, className],
+          // @ts-ignore
           domProps: assign({}, ctx.$data.domProps, {
+            // @ts-ignore
             innerHTML: Prism.highlight(code, prismLanguage)
           })
         })
@@ -62,12 +66,14 @@ export default defineComponent({
 
     return h(
       'pre',
+      // @ts-ignore
       assign({}, ctx.$data, {
         class: [ctx.$data.class, className]
       }),
       [
         h('code', {
           class: className,
+          // @ts-ignore
           innerHTML: Prism.highlight(code, prismLanguage)
         })
       ]

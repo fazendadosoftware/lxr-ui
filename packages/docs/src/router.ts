@@ -3,7 +3,7 @@ import Views from './views'
 
 const routes = [
   {
-    path: '/',
+    path: process.env.NODE_ENV === 'production' ? '/lxr-ui/' : '/',
     component: Views.Home,
     children: [
       {
@@ -11,15 +11,15 @@ const routes = [
         component: Views.LandingPage
       },
       {
-        path: 'introduction',
+        path: '/introduction',
         component: Views.Introduction
       },
       {
-        path: 'start',
+        path: '/start',
         component: Views.GettingStarted
       },
       {
-        path: 'components',
+        path: '/components',
         component: Views.Components,
         children: [
           {

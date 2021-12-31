@@ -23,7 +23,7 @@
         <div v-for="(item, key) in componentGroups" :key="key" class="mb-6">
           <h2>{{ key }}</h2>
           <div class="mt-4 grid lg:grid-cols-3 grid-cols-1 gap-6 comps-grid">
-            <template v-for="(component, i) in item" :key="i">
+            <template v-for="(component, i) in item as any" :key="i">
               <router-link :to="component.route">
                 <div class="card-up bg-white p-4">
                   <div class="flex">
