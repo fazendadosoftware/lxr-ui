@@ -1,6 +1,6 @@
 <template>
-  <Row class="flex" justify="center">
-    <Col class="mainpage-col flex flex-col mx-14 mb-8 w-full" lg="12" sm="12" xs="12">
+  <v-row class="flex" justify="center">
+    <v-col class="mainpage-col flex flex-col mx-14 mb-8 w-full" lg="12" sm="12" xs="12">
       <p class="main-title">
         <img width="150" src="../assets/img/lxr-ui-logo.svg" />
       </p>
@@ -19,12 +19,11 @@
 
       <div class="py-6">
         <h1 class="font-bold text-3xl">Components</h1>
-
         <div v-for="(item, key) in componentGroups" :key="key" class="mt-4 mb-6">
           <h2 class="font-semibold text-xl">{{ key }}</h2>
           <div class="mt-4 grid lg:grid-cols-3 grid-cols-1 gap-6 comps-grid">
-            <template v-for="(component, i) in item as any" :key="i">
-              <router-link :to="component.route">
+            <template v-for="(component, i) of item as any" :key="i">
+              <router-link :to="{ name: component.routeName }">
                 <div class="card-up bg-white p-4">
                   <div class="flex">
                     <it-icon style="font-size: 24px" :name="component.icon" />
@@ -43,8 +42,8 @@
           </div>
         </div>
       </div>
-    </Col>
-  </Row>
+    </v-col>
+  </v-row>
 </template>
 
 <script lang="ts" setup>
