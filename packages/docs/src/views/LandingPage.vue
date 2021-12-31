@@ -18,10 +18,10 @@
       <it-divider class="mt-8 w-full" />
 
       <div class="py-6">
-        <h1>Components</h1>
+        <h1 class="font-bold text-3xl">Components</h1>
 
-        <div v-for="(item, key) in componentGroups" :key="key" class="mb-6">
-          <h2>{{ key }}</h2>
+        <div v-for="(item, key) in componentGroups" :key="key" class="mt-4 mb-6">
+          <h2 class="font-semibold text-xl">{{ key }}</h2>
           <div class="mt-4 grid lg:grid-cols-3 grid-cols-1 gap-6 comps-grid">
             <template v-for="(component, i) in item as any" :key="i">
               <router-link :to="component.route">

@@ -1,16 +1,16 @@
 <template>
-  <div class="text-sm">
+  <article class="prose prose-a:text-blue-600 max-w-none">
     <h1>Getting started</h1>
-    <div class="bg-white border rounded-md shadow p-4">
-      <h2 class="mb-3">Install with NPM or Yarn</h2>
+    <div class="bg-white border rounded-md shadow py-4 px-8">
+      <h2>Install with NPM or Yarn</h2>
       <prism language="bash" :code="installCode" />
 
-      <h2 class="mt-5 mb-3">Use all components</h2>
+      <h2>Use all components</h2>
       <prism language="js" :code="useAllComponents"/>
-      <h2 class="mt-5 mb-3">Or individual components</h2>
+      <h2>Or individual components</h2>
       <prism language="js" :code="useIndividualComponents"/>
     </div>
-  </div>
+  </article>
 </template>
 
 <script lang="ts" setup>

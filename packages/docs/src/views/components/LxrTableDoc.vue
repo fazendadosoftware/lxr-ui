@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <article class="prose max-w-none">
     <h1>LxrTable</h1>
     <v-box
       :code="codeLxrTableSimple"
       title="Simple, with sorting">
-      <div class="w-full h-[200px] border-b">
+      <div class="w-full h-[200px] border-b not-prose">
         <lxr-table
           :columns="simpleColumns"
           :rows="simpleSortedRows"
@@ -19,7 +19,7 @@
         Selected:
         <span class="font-bold ml-1">{{selectedRow?.name ?? 'none'}}</span>
       </div>
-      <div class="w-full h-[200px] border-b">
+      <div class="w-full h-[200px] border-b not-prose">
         <lxr-table
           :columns="withActionColumns"
           :rows="withActionSortedRows"
@@ -29,7 +29,7 @@
     <v-box
       :code="codeLxrTableInfiniteScroll"
       title="Infinite scroll">
-      <div class="w-full h-[200px] border-b">
+      <div class="w-full h-[200px] border-b not-prose">
         <lxr-table
           :columns="withInfiniteColumns"
           :rows="infiniteRows"
@@ -37,8 +37,8 @@
           :fetch-more-callback="fetchMoreCallback"/>
       </div>
     </v-box>
-    <props-table tag-name="lxr-table" :data-sheet="dataSheetLxrTable" :event-sheet="eventSheetLxrTable" />
-  </div>
+    <props-table class="not-prose" tag-name="lxr-table" :data-sheet="dataSheetLxrTable" :event-sheet="eventSheetLxrTable" />
+  </article>
 </template>
 
 <script lang="ts" setup>
