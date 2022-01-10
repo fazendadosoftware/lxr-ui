@@ -1,12 +1,17 @@
 <template>
   <div class="overflow-y-auto h-full text-[12px]" @scroll.passive="scrollHandler">
-    <table class="min-w-full !border-separate [border-spacing:0]">
+    <table
+      class="min-w-full !border-separate [border-spacing:0]"
+      :class="{
+        [tableClasses ?? '']: true
+      }">
       <thead>
         <tr>
           <th
             v-for="column in columns"
             :key="column.key"
-            class="select-none font-normal cursor-default sticky top-0 bg-[#f0f0f0] first:border-l border-t border-b border-r border-[#ccc]">
+            class="select-none font-normal cursor-default sticky top-0 bg-[#f0f0f0] first:border-l border-t border-b border-r border-[#ccc]"
+            :class="{ [column?.headerClasses ?? '']: true }">
             <div
               class="group inline-flex justify-center items-center relative px-[4px] py-[2px]"
               :class="{
@@ -46,6 +51,7 @@
             v-for="(column, j) in columns"
             :key="`${i}-${j}`"
             class="first:border-l border-r border-b border-[#ccc]"
+            :class="{ [column.cellClasses ?? '']: true }"
             :style="getCellStyle(column)">
             <component
               v-if="column.component"
@@ -98,6 +104,8 @@ export interface LxrColumn {
   label?: string
   align?: 'left' | 'right' | 'center'
   sortable?: boolean
+  headerClasses?: string
+  cellClasses?: string
   component?: Component<LxrCellComponentProps>
   extraProps?: () => Object
 }
@@ -119,13 +127,14 @@ export interface LxrTableProps {
   */
   threshold?: string | number
   fetchMoreCallback?: () => Promise<void>
+  tableClasses?: string
   rowClasses?: string
 }
 
 library.add(faSync)
 
 const props = defineProps<LxrTableProps>()
-const { columns, threshold, fetchMoreCallback, sort } = toRefs(props)
+const { columns, threshold, fetchMoreCallback, sort, tableClasses } = toRefs(props)
 const fetchingMore = ref(false)
 const instance = getCurrentInstance()
 

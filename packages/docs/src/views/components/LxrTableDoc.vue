@@ -6,6 +6,7 @@
       title="Simple, with sorting">
       <div class="w-full h-[200px] border-b not-prose">
         <lxr-table
+          table-classes="table-fixed"
           :columns="simpleColumns"
           :rows="simpleSortedRows"
           :sort="simpleSort"
@@ -299,6 +300,8 @@ const dataSheetLxrTable = [
           { name: 'label*', type: 'string', description: 'Column header label' },
           { name: 'align', type: '"left" | "right" | "center"', description: 'Cell content alignment, defaults to "left"' },
           { name: 'sortable', type: 'boolean', description: 'Sets column as sortable, defaults to false' },
+          { name: 'headerClasses', type: 'string', description: 'Classes applied to column header' },
+          { name: 'cellClasses', type: 'string', description: 'Classes applied to column cells' },
           { name: 'component', type: 'Component', description: 'Custom component to be shown as column cells' },
           { name: 'extraProps', type: '() => Object', description: 'Extra properties to be passed to the custom component' }
         ]
@@ -325,6 +328,11 @@ const dataSheetLxrTable = [
     property: 'fetchMoreCallback',
     type: ['() => Promise<void>'],
     description: 'Optional callback that gets triggered when user scrolls below the defined threshold level.'
+  },
+  {
+    property: 'tableClasses',
+    type: ['string'],
+    description: 'Optional css classes to be applied to the table element.'
   },
   {
     property: 'rowClasses',
