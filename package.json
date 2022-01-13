@@ -12,6 +12,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently --kill-others \"npm run dev -w docs\" \"npm run dev -w lxr-ui\"",
+    "dev:docs": "npm run dev -w docs-v2",
     "build:library": "npm run build -w lxr-ui",
     "publish:library": "npm publish -w lxr-ui",
     "lint": "npm run lint --workspaces --if-present",
