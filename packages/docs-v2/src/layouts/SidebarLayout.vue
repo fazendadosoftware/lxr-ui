@@ -48,10 +48,12 @@
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex-1 flex flex-col min-h-0 bg-gradient-to-tl from-leanix-blue-dark to-leanix-blue text-white">
         <div class="flex-1 flex flex-col overflow-y-auto">
-          <div class="flex flex-col justify-center items-center p-6 space-y-4 bg-gradient-to-bl from-leanix-blue-dark to-leanix-blue border-b">
-            <div class="flex items-center flex-shrink-0 mb-4">
-              <img class="h-10 w-auto" src="../assets/img/lxr-ui-logo.svg" alt="Lxr-UI" />
-            </div>
+          <div class="flex flex-col justify-center items-center py-4 px-6 space-y-4 bg-gradient-to-b from-blue-400 to-leanix-blue border-b border-blue-600">
+            <router-link
+              :to="{name: Routes.LandingPage }"
+              class="p-4 rounded-lg">
+              <lxr-ui-logo class="stroke-blue-900 fill-blue-100 h-12 stroke-1"/>
+            </router-link>
             <button
               class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5">
               <github-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
@@ -62,19 +64,7 @@
               Twitter
             </button>
           </div>
-          <nav class="mt-5 flex-1 px-2 space-y-1">
-            <a
-              v-for="item in navigation"
-              :key="item.name"
-              :href="item.href"
-              :class="[
-                item.current ? 'bg-leanix-blue-dark text-white' : 'text-white hover:bg-leanix-blue-dark hover:bg-opacity-75',
-                'group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors'
-              ]">
-              <component :is="item.icon" class="mr-3 flex-shrink-0 h-6 w-6 text-gray-300" aria-hidden="true" />
-              {{ item.name }}
-            </a>
-          </nav>
+          <navigation-list />
         </div>
       </div>
     </div>
@@ -88,19 +78,8 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main class="flex-1">
-        <div class="py-6">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-          </div>
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <!-- Replace with your content -->
-            <div class="py-4">
-              <div class="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-            </div>
-            <!-- /End replace -->
-          </div>
-        </div>
+      <main class="min-h-screen">
+        <router-view />
       </main>
     </div>
   </div>
@@ -119,8 +98,11 @@ import {
   UsersIcon,
   XIcon
 } from '@heroicons/vue/outline'
+import { Routes } from '../router'
 import GithubIcon from '@/components/GithubIcon.vue'
 import TwitterIcon from '@/components/TwitterIcon.vue'
+import NavigationList from '@/components/NavigationList.vue'
+import LxrUiLogo from '@/components/LxrUiLogo.vue'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },

@@ -1,8 +1,12 @@
 <template>
-
-  <sidebar-layout />
+  <div>
+    <github-corner />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import SidebarLayout from '@/layouts/SidebarLayout.vue'
+import GithubCorner from '@/components/GithubCorner.vue'
 </script>
