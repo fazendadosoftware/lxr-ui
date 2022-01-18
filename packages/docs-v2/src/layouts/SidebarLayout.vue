@@ -84,7 +84,7 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main>
+      <main class="min-h-screen bg-blue-100">
         <router-view />
       </main>
     </div>

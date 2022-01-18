@@ -4,7 +4,7 @@
     custom
     v-slot="{ navigate }">
     <div
-      class="prose prose-h3:m-0 border border-gray-200 rounded-md px-6 py-2 space-y-1 cursor-pointer hover:shadow-xl transition-all duration-300"
+      class="bg-white prose prose-h3:m-0 border border-gray-100 shadow rounded-md px-6 py-2 space-y-1 cursor-pointer hover:shadow-xl transition-all duration-300"
       @click="navigate">
       <div class="flex space-x-2 items-center">
         <h3 class="flex items-center">

@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-auto container px-4 sm:px-0 md:px-4">
+  <div class="mx-auto container px-4 pt-20 space-y-10 sm:px-0 md:px-4">
     <!-- hero section -->
-    <section class="my-20 max-w-none border-b prose">
+    <section class="max-w-none border-b prose">
       <lxr-ui-logo class="stroke-blue-900 fill-leanix-blue-dark h-10 stroke-1"/>
       <h3>Vue 3 Component Library for Building LeanIX Custom Reports </h3>
       <div class="flex space-x-6 py-8">
@@ -22,7 +22,7 @@
           v-slot="{navigate}">
           <button
             type="button"
-            class="inline-flex items-center px-6 py-3 border border-gray-300 shadow text-lg font-medium rounded-lg text-gray-700 bg-white hover:shadow-xl focus:outline-none transition-all"
+            class="inline-flex items-center px-6 py-3 border border-gray-100 shadow text-lg font-medium rounded-lg text-gray-700 bg-white hover:shadow-xl focus:outline-none transition-all"
             @click="navigate">
             Github
           </button>
@@ -30,7 +30,7 @@
       </div>
     </section>
     <!-- components section-->
-    <section class="prose prose-stone max-w-none">
+    <section class="prose max-w-none">
       <h1>Components</h1>
       <div
         v-for="category in components"

@@ -98,12 +98,6 @@ const routes = [
       return false
     }
   }
-  /*
-  {
-    path: '*',
-    redirect: { name: Routes.LandingPage }
-  }
-  */
 ]
 
 export default routes
