@@ -1,13 +1,4 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <!--
-    This example requires updating your template:
-
-    ```
-    <html class="h-full bg-gray-100">
-    <body class="h-full">
-    ```
-  -->
   <div>
     <transition-root as="template" :show="sidebarOpen">
       <t-dialog as="div" class="fixed inset-0 flex z-40 md:hidden" @close="sidebarOpen = false">
@@ -48,23 +39,38 @@
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex-1 flex flex-col min-h-0 bg-gradient-to-tl from-leanix-blue-dark to-leanix-blue text-white">
         <div class="flex-1 flex flex-col overflow-y-auto">
-          <div class="flex flex-col justify-center items-center py-4 px-6 space-y-4 bg-gradient-to-b from-blue-400 to-leanix-blue border-b border-blue-600">
+          <div class="flex flex-col justify-center items-center pt-4 pb-6 px-6 space-y-4 bg-gradient-to-b from-blue-400 to-leanix-blue border-b border-blue-400">
             <router-link
               :to="{name: Routes.LandingPage }"
               class="p-4 rounded-lg">
-              <lxr-ui-logo class="stroke-blue-900 fill-blue-100 h-12 stroke-1"/>
+              <lxr-ui-logo class="stroke-blue-900 fill-blue-100 h-10 stroke-1"/>
             </router-link>
-            <button
-              class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5">
-              <github-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
-              Github
-            </button>
-            <button class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5">
+            <router-link
+              :to="{ name: Routes.Github }"
+              custom
+              v-slot="{ navigate }">
+              <button
+                class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
+                @click="navigate">
+                <github-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
+                Github
+              </button>
+            </router-link>
+            <router-link
+              :to="{ name: Routes.Twitter }"
+              custom
+              v-slot="{ navigate }">
+              <button
+                class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
+                @click="navigate">
               <twitter-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
-              Twitter
-            </button>
+                Twitter
+              </button>
+            </router-link>
           </div>
-          <navigation-list />
+          <div class="flex-1 bg-gradient-to-b from-leanix-blue to-leanix-blue-dark">
+            <navigation-list />
+          </div>
         </div>
       </div>
     </div>
@@ -78,7 +84,7 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main class="min-h-screen">
+      <main>
         <router-view />
       </main>
     </div>
