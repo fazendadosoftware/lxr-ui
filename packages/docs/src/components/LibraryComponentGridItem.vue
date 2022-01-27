@@ -7,8 +7,8 @@
       class="bg-white prose prose-h3:m-0 border border-gray-100 shadow rounded-md px-6 py-2 space-y-1 cursor-pointer hover:shadow-xl transition-all duration-300"
       @click="navigate">
       <div class="flex space-x-2 items-center">
-        <h3 class="flex items-center">
-          <span v-if="component.icon" class="material-icons mr-1">
+        <h3 class="flex items-center text-sm sm:text-lg text-gray-700">
+          <span v-if="component.icon" class="material-icons material-icons-outlined mr-1 text-sm sm:text-xl">
             {{ component.icon }}
           </span>
           {{component.label}}

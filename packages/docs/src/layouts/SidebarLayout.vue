@@ -7,26 +7,16 @@
         </transition-child>
         <transition-child as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="-translate-x-full">
           <div class="relative flex-1 flex flex-col max-w-xs w-full bg-leanix-blue">
-            <transition-child as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
-              <div class="absolute top-0 right-0 -mr-12 pt-2">
-                <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" @click="sidebarOpen = false">
-                  <span class="sr-only">Close sidebar</span>
-                  <x-icon class="h-6 w-6 text-white" aria-hidden="true" />
-                </button>
-              </div>
-            </transition-child>
-            <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto flex flex-col space-y-8 text-white">
+            <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto flex flex-col items-start space-y-8 text-white">
               <router-link
                 v-slot="{ navigate }"
                 :to="{ name: Routes.LandingPage }"
                 custom>
                 <lxr-ui-logo
-                  class="stroke-gray-600 fill-white drop-shadow h-8 px-4 cursor-pointer"
+                  class="stroke-gray-600 fill-white drop-shadow h-10 cursor-pointer px-6 mt-4"
                   @click="navigate"/>
               </router-link>
-              <div class="flex-1 bg-gradient-to-b from-leanix-blue to-leanix-blue-dark">
-                <navigation-list />
-              </div>
+              <navigation-list />
             </div>
           </div>
         </transition-child>
@@ -65,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="md:pl-64 flex flex-col flex-1 bg-gradient-to-r from-leanix-blue to-transparent">
+    <div class="min-h-screen md:pl-64 flex flex-col flex-1 bg-gradient-to-r from-leanix-blue to-transparent">
       <div class="sticky top-0 z-10 md:hidden">
         <button
           type="button"
@@ -75,7 +65,7 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main class="min-h-screen container sm:px-8 py-14 mx-auto max-w-[960px]">
+      <main class="flex-1 container py-8 sm:px-8 mx-auto max-w-[960px]">
         <router-view v-slot="{ Component }">
           <transition
             enter-from-class="opacity-0"

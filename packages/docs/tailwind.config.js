@@ -1,4 +1,4 @@
-// tailwind.config.js
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -10,7 +10,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans]
+        sans: ['inter', ...defaultTheme.fontFamily.sans]
+      },
+      borderRadius: {
+        DEFAULT: '3px'
+      },
+      colors: {
+        leanix: {
+          blue: {
+            DEFAULT: '#1666ee',
+            dark: '#1259d4'
+          }
+        }
       },
       content: {
         'arrow-up': 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAMAAADJ7yrpAAAAKlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKE86IAAAADXRSTlMABBEmRGprlJW72e77tTkTKwAAAFNJREFUeAHtzjkSgCAUBNHPgsoy97+ulGXRqJE5L+xkxoYt2UdsLb5bqFINz+aLuuLn5rIu2RkO3fZpWENimNgiw6iBYRTPMLJjGFxQZ1hxxb/xBI1qC8k39CdKAAAAAElFTkSuQmCC")',

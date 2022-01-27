@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 cursor-default select-none">
+  <div class="px-6 cursor-default select-none">
     <navigation-list-item
       v-for="item in navItems"
       :key="item.key"

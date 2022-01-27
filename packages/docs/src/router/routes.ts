@@ -1,3 +1,4 @@
+import { defineAsyncComponent } from 'vue'
 import NestedRouterView from '@/views/NestedRouterView.vue'
 import { NavItem } from '../types'
 

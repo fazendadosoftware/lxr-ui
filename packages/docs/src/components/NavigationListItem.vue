@@ -9,7 +9,7 @@
         'text-white hover:bg-white/10 -mr-6 pl-8 -ml-8 opacity-70 hover:opacity-100 hover:text-yellow-200': !isActive,
         'text-yellow-200 translate-x-2 -mr-4 -ml-12 pl-12 opacity-100': isActive
       }"
-      class="flex items-center space-x-2 transform duration-300 transition-all cursor-pointer text-sm font-semibold py-0.5 text-shadow"
+      class="flex items-center space-x-2 transform duration-300 transition-all cursor-pointer sm:text-sm font-semibold py-1 sm:py-0.5 text-shadow"
       @click="navigate">
       <span
         v-if="item?.icon"
