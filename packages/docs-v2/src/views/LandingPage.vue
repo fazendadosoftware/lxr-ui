@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto container px-4 pt-20 space-y-10 sm:px-0 md:px-4">
     <!-- hero section -->
-    <section class="max-w-none border-b border-gray-400 prose">
+    <section class="max-w-none prose">
       <lxr-ui-logo class="stroke-gray-600 fill-white drop-shadow h-10 stroke-1"/>
       <h3 class="text-white text-shadow">A Vue 3 Component Library for Building LeanIX Custom Reports </h3>
       <div class="flex space-x-6 py-8">
