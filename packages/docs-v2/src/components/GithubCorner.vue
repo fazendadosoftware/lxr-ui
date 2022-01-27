@@ -1,7 +1,7 @@
 <template>
   <a
     href="https://github.com/fazendadosoftware/lxr-ui"
-    class="github-corner absolute top-0 right-0 z-50"
+    class="github-corner fixed top-0 right-0 z-50"
     aria-label="View source on GitHub"
     target="_blank"
   >

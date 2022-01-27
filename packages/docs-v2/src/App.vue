@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <github-corner />
     <router-view v-slot="{ Component }">
       <keep-alive>

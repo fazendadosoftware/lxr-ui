@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-y-auto h-full text-[12px]" @scroll.passive="scrollHandler">
+  <div class="overflow-y-auto h-full text-[12px] not-prose" @scroll.passive="scrollHandler">
     <table
       class="min-w-full !border-separate [border-spacing:0]"
       :class="{
@@ -13,7 +13,7 @@
             class="select-none font-normal cursor-default sticky top-0 bg-[#f0f0f0] first:border-l border-t border-b border-r border-[#ccc]"
             :class="{ [column?.headerClasses ?? '']: true }">
             <div
-              class="group inline-flex justify-center items-center relative px-[4px] py-[2px]"
+              class="group inline-flex justify-center items-center relative px-[4px]"
               :class="{
                 'cursor-pointer': column.sortable || getSortingDirection(column) !== null
               }">
@@ -59,7 +59,7 @@
               v-bind="{ row, column, emit, ...(column?.extraProps?.() ?? {}) }" />
             <div
               v-else
-              class="px-[4px] py-[2px] block">
+              class="px-[4px] block">
               {{ row[column.key] }}
             </div>
           </td>

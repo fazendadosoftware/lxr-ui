@@ -46,25 +46,14 @@
               <lxr-ui-logo class="stroke-blue-900 fill-blue-100 h-10 stroke-1"/>
             </router-link>
             <router-link
+              v-slot="{ navigate }"
               :to="{ name: Routes.Github }"
-              custom
-              v-slot="{ navigate }">
+              custom>
               <button
                 class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
                 @click="navigate">
                 <github-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
                 Github
-              </button>
-            </router-link>
-            <router-link
-              :to="{ name: Routes.Twitter }"
-              custom
-              v-slot="{ navigate }">
-              <button
-                class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
-                @click="navigate">
-              <twitter-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
-                Twitter
               </button>
             </router-link>
           </div>
@@ -74,7 +63,7 @@
         </div>
       </div>
     </div>
-    <div class="md:pl-64 flex flex-col flex-1">
+    <div class="md:pl-64 flex flex-col flex-1 bg-blue-100">
       <div class="sticky top-0 z-10 md:hidden bg-leanix-blue">
         <button
           type="button"
@@ -84,7 +73,7 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main class="min-h-screen bg-blue-100">
+      <main class="min-h-screen container sm:px-8 py-14 mx-auto max-w-[960px]">
         <router-view />
       </main>
     </div>
@@ -106,7 +95,6 @@ import {
 } from '@heroicons/vue/outline'
 import { Routes } from '../router'
 import GithubIcon from '@/components/GithubIcon.vue'
-import TwitterIcon from '@/components/TwitterIcon.vue'
 import NavigationList from '@/components/NavigationList.vue'
 import LxrUiLogo from '@/components/LxrUiLogo.vue'
 

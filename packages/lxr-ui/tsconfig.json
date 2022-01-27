@@ -14,7 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "composite": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "newLine": "lf",
     "types": [
       "node",
@@ -22,7 +22,7 @@
     ],
     "paths": {
       "@/*": [
-        "src/*"
+        "./*"
       ]
     },
     "plugins": [
@@ -41,5 +41,10 @@
   "exclude": [
       "node_modules",
       "dist"
+  ],
+  "references": [
+    {
+      "path": "../lxr-ui"
+    }
   ]
 }

@@ -17,8 +17,8 @@ interface LibraryComponentCategoryIndex {
 export interface LibraryComponent {
   path: string
   name: Routes
-  component: () => Promise<typeof import('*.vue')>
-  meta: { category: keyof LibraryComponentCategoryIndex, icon: string, label: string, examples: number }
+  component: () => Promise<typeof import('*.vue') | any>
+  meta: { category: keyof LibraryComponentCategoryIndex, icon: string, label: string }
 }
 
 const libraryComponentCategoryIndex: LibraryComponentCategoryIndex = {
@@ -29,15 +29,15 @@ const components: LibraryComponent[] = [
   {
     path: 'lxr-table',
     name: Routes.LxrTable,
-    component: () => import('@/views/components/LxrTable.vue'),
-    meta: { category: 'dataDisplay', icon: 'view_module', label: 'LxrTable', examples: 3 }
+    component: () => import('@/views/components/LxrTable/LxrTable.vue'),
+    meta: { category: 'dataDisplay', icon: 'view_module', label: 'LxrTable' }
   }
 ]
 
 export const getLibraryComponentNavItems = (): NavItem[] => {
   const categoryIndex = components
     .reduce((accumulator: Record<string, NavItem[]>, component) => {
-      const navItem = { key: component.name, label: component.meta.label, icon: component.meta.icon, examples: component.meta.examples }
+      const navItem = { key: component.name, label: component.meta.label, icon: component.meta.icon, examples: component.component().then(({ examples }) => examples) }
       if (!accumulator[component.meta.category]) accumulator[component.meta.category] = []
       accumulator[component.meta.category].push(navItem)
       return accumulator
@@ -86,15 +86,6 @@ const routes = [
     component: () => import('@/views/NestedRouterView.vue'),
     beforeEnter: () => {
       window.open('https://github.com/fazendadosoftware/lxr-ui')
-      return false
-    }
-  },
-  {
-    path: '/twitter',
-    name: Routes.Twitter,
-    component: () => import('@/views/NestedRouterView.vue'),
-    beforeEnter: () => {
-      window.open('https://twitter.com/lxr_ui')
       return false
     }
   }

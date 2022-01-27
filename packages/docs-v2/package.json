@@ -4,29 +4,42 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --fix"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.4.3",
     "@heroicons/vue": "^1.0.5",
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "animate.css": "^4.1.1",
+    "equal-vue": "^0.79.3",
+    "floating-vue": "^2.0.0-beta.3",
+    "highlight.js": "^11.4.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "@typescript-eslint/parser": "^5.9.1",
-    "@vitejs/plugin-vue": "^2.0.0",
     "@tailwindcss/typography": "^0.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
     "autoprefixer": "^10.4.2",
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
+    "eslint": "^8.7.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.3.0",
     "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "stylus": "^0.56.0",
     "tailwindcss": "^3.0.13",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
     "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix",
+    "*": "prettier -w -u"
   }
 }
