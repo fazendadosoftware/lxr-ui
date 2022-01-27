@@ -4,7 +4,7 @@
     :to="{ name: component.key }"
     custom>
     <div
-      class="bg-white prose prose-h3:m-0 border border-gray-100 shadow rounded-md px-6 py-2 space-y-1 cursor-pointer hover:shadow-xl transition-all duration-300"
+      class="bg-white prose prose-h3:m-0 border border-gray-100 shadow rounded-md px-4 py-2 sm:px-6 sm:py-3 space-y-1 cursor-pointer hover:shadow-xl transition-all duration-300"
       @click="navigate">
       <div class="flex space-x-2 items-center">
         <h3 class="flex items-center text-sm sm:text-lg text-gray-700">

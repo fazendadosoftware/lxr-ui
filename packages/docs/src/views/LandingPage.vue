@@ -3,7 +3,7 @@
     <!-- hero section -->
     <section class="max-w-none prose flex flex-col items-center sm:items-start">
       <lxr-ui-logo class="stroke-gray-600 fill-white drop-shadow h-10 stroke-1"/>
-      <h3 class="text-white text-shadow text-center">A Vue 3 Component Library for Building LeanIX Custom Reports </h3>
+      <h3 class="text-white text-shadow text-center text-lg sm:text-xl py-6 sm:py-2">A Vue 3 Component Library for Building LeanIX Custom Reports </h3>
       <div class="flex space-x-6 py-8">
         <router-link
           v-slot="{navigate}"
@@ -11,7 +11,7 @@
           custom>
           <button
             type="button"
-            class="inline-flex items-center px-6 py-3 border border-gray-100 shadow text-lg font-medium rounded-lg text-gray-700 bg-white hover:shadow-xl focus:outline-none transition-all"
+            class="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 border border-gray-100 shadow text-base sm:text-lg font-semibold sm:font-medium rounded-lg text-gray-700 bg-white hover:shadow-xl focus:outline-none transition-all"
             @click="navigate">
             Introduction
           </button>
@@ -22,7 +22,7 @@
           custom>
           <button
             type="button"
-            class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-lg shadow bg-yellow-300 hover:shadow-xl focus:outline-none transition-all"
+            class="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 border border-transparent text-base sm:text-lg font-semibold sm:font-medium rounded-lg shadow bg-yellow-300 hover:shadow-xl focus:outline-none transition-all"
             @click="navigate">
             Get started
           </button>
