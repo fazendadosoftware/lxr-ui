@@ -1,6 +1,6 @@
 <template>
   <article class="component-article">
-    <h1 class="px-8 sm:px-0" v-text="title" />
+    <h1 class="px-8 sm:px-0 text-shadow !text-white" v-text="title" />
     <div v-if="demoComponent" class="section-container p-8">
       <component :is="demoComponent" />
     </div>

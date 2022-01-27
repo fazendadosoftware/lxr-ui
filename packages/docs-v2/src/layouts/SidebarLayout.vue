@@ -21,7 +21,7 @@
                 :to="{ name: Routes.LandingPage }"
                 custom>
                 <lxr-ui-logo
-                  class="stroke-blue-900 fill-blue-100 h-8 px-4 cursor-pointer"
+                  class="stroke-gray-600 fill-white drop-shadow h-8 px-4 cursor-pointer"
                   @click="navigate"/>
               </router-link>
               <div class="flex-1 bg-gradient-to-b from-leanix-blue to-leanix-blue-dark">
@@ -39,13 +39,13 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex-1 flex flex-col min-h-0 bg-gradient-to-tl from-leanix-blue-dark to-leanix-blue text-white">
+      <div class="flex-1 flex flex-col min-h-0 text-white shadow-lg shadow-leanix-blue">
         <div class="flex-1 flex flex-col overflow-y-auto">
-          <div class="flex flex-col justify-center items-center pt-4 pb-6 px-6 space-y-4 bg-gradient-to-b from-blue-400 to-leanix-blue border-b border-blue-400">
+          <div class="flex flex-col justify-center items-center pt-4 pb-6 px-6 space-y-4">
             <router-link
               :to="{name: Routes.LandingPage }"
               class="p-4 rounded-lg">
-              <lxr-ui-logo class="stroke-blue-900 fill-blue-100 h-10 stroke-1"/>
+              <lxr-ui-logo class="stroke-gray-600 fill-white drop-shadow h-11 w-auto"/>
             </router-link>
             <router-link
               v-slot="{ navigate }"
@@ -59,14 +59,14 @@
               </button>
             </router-link>
           </div>
-          <div class="flex-1 bg-gradient-to-b from-leanix-blue to-leanix-blue-dark">
+          <div class="flex-1">
             <navigation-list />
           </div>
         </div>
       </div>
     </div>
-    <div class="md:pl-64 flex flex-col flex-1 bg-blue-100">
-      <div class="sticky top-0 z-10 md:hidden bg-leanix-blue">
+    <div class="md:pl-64 flex flex-col flex-1 bg-gradient-to-r from-leanix-blue to-transparent">
+      <div class="sticky top-0 z-10 md:hidden">
         <button
           type="button"
           class="h-12 w-12 inline-flex items-center justify-center text-white hover:bg-leanix-blue-dark focus:outline-none"

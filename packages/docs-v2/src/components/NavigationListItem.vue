@@ -6,12 +6,17 @@
     custom>
     <div
       :class="{
-        'text-white hover:bg-white/10 -mr-6 pl-8 -ml-8 opacity-70 hover:opacity-100': !isActive,
-        'text-white bg-white/20 translate-x-2 -mr-4 -ml-12 pl-12 opacity-100': isActive
+        'text-white hover:bg-white/10 -mr-6 pl-8 -ml-8 opacity-70 hover:opacity-100 hover:text-yellow-200': !isActive,
+        'text-yellow-200 translate-x-2 -mr-4 -ml-12 pl-12 opacity-100': isActive
       }"
-      class="flex items-center space-x-2 transform duration-300 transition-all cursor-pointer text-sm font-semibold py-0.5"
+      class="group flex items-center space-x-2 transform duration-300 transition-all cursor-pointer text-sm font-semibold py-0.5 text-shadow"
       @click="navigate">
-      <span v-if="item?.icon" class="material-icons material-icons-outlined text-xl">
+      <span
+        v-if="item?.icon"
+        class="material-icons material-icons-outlined text-xl group-hover:animate-ping"
+        :class="{
+          'animate-pulse': isActive
+        }">
         {{item?.icon}}
       </span>
       <span>
@@ -20,7 +25,7 @@
     </div>
   </router-link>
   <template v-else>
-    <div class="mb-6 last:mb-0">
+    <div class="mb-6 last:mb-0 text-shadow">
       <div
         :class="{
           'text-base tracking-widest font-bold leading-loose mb-2 uppercase': level === 0,

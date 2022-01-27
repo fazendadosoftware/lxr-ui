@@ -1,6 +1,6 @@
 <template>
-  <article class="prose prose-a:text-blue-600 prose-a:font-bold prose-a:no-underline max-w-none">
-    <h1>
+  <article class="prose prose-a:text-leanix-blue-dark prose-a:font-bold prose-a:no-underline max-w-none">
+    <h1 class="text-white text-shadow">
       <slot name="title">
         Title
       </slot>
