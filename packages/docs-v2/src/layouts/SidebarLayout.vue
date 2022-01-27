@@ -15,16 +15,18 @@
                 </button>
               </div>
             </transition-child>
-            <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-              <div class="flex-shrink-0 flex items-center px-4">
-                <img class="h-8 w-auto" src="../assets/img/lxr-ui-logo.svg" alt="Lxr-UI" />
+            <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto flex flex-col space-y-8 text-white">
+              <router-link
+                v-slot="{ navigate }"
+                :to="{ name: Routes.LandingPage }"
+                custom>
+                <lxr-ui-logo
+                  class="stroke-blue-900 fill-blue-100 h-8 px-4 cursor-pointer"
+                  @click="navigate"/>
+              </router-link>
+              <div class="flex-1 bg-gradient-to-b from-leanix-blue to-leanix-blue-dark">
+                <navigation-list />
               </div>
-              <nav class="mt-5 px-2 space-y-1">
-                <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-leanix-blue-dark text-white' : 'text-white hover:bg-leanix-blue-dark hover:bg-opacity-75', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
-                  <component :is="item.icon" class="mr-4 flex-shrink-0 h-6 w-6 text-white" aria-hidden="true" />
-                  {{ item.name }}
-                </a>
-              </nav>
             </div>
           </div>
         </transition-child>
@@ -74,38 +76,34 @@
         </button>
       </div>
       <main class="min-h-screen container sm:px-8 py-14 mx-auto max-w-[960px]">
-        <router-view />
+        <router-view v-slot="{ Component }">
+          <transition
+            enter-from-class="opacity-0"
+            enter-active-class="transition-opacity duration-300"
+            enter-to-class="opacity-100"
+            leave-from-class="opacity-100"
+            leave-active-class="transition-opacity duration-300"
+            leave-to-class="opacity-0"
+            mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </main>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, unref } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
 import { DialogOverlay, TransitionChild, TransitionRoot, Dialog as TDialog } from '@headlessui/vue'
-import {
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  MenuIcon,
-  UsersIcon,
-  XIcon
-} from '@heroicons/vue/outline'
+import { MenuIcon, XIcon } from '@heroicons/vue/outline'
 import { Routes } from '../router'
 import GithubIcon from '@/components/GithubIcon.vue'
 import NavigationList from '@/components/NavigationList.vue'
 import LxrUiLogo from '@/components/LxrUiLogo.vue'
 
-const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartBarIcon, current: false }
-]
-
 const sidebarOpen = ref(false)
+
+onBeforeRouteUpdate(() => { if (unref(sidebarOpen)) sidebarOpen.value = false })
 </script>

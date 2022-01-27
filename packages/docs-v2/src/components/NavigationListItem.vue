@@ -1,17 +1,17 @@
 <template>
   <router-link
     v-if="!Array.isArray(item.children)"
-    :to="{ name: item.key }"
     v-slot="{ navigate, isActive }"
+    :to="{ name: item.key }"
     custom>
     <div
-      @click="navigate"
-      class="flex items-center space-x-2 transform duration-300 transition-all cursor-pointer text-sm font-semibold py-2"
       :class="{
-        'text-white hover:bg-white/10 -mr-6 pl-8 -ml-8': !isActive,
-        'text-white bg-white/20 translate-x-2 -mr-4 -ml-12 pl-12': isActive
-      }">
-      <span v-if="item?.icon" class="material-icons material-icons-outlined">
+        'text-white hover:bg-white/10 -mr-6 pl-8 -ml-8 opacity-70 hover:opacity-100': !isActive,
+        'text-white bg-white/20 translate-x-2 -mr-4 -ml-12 pl-12 opacity-100': isActive
+      }"
+      class="flex items-center space-x-2 transform duration-300 transition-all cursor-pointer text-sm font-semibold py-0.5"
+      @click="navigate">
+      <span v-if="item?.icon" class="material-icons material-icons-outlined text-xl">
         {{item?.icon}}
       </span>
       <span>
@@ -23,12 +23,19 @@
     <div class="mb-6 last:mb-0">
       <div
         :class="{
-          'text-xl font-semibold leading-loose mb-2': level === 0,
-          'font-semibold text-xs rounded inline px-1 py-0.5 text-white bg-blue-800': level === 1
+          'text-base tracking-widest font-bold leading-loose mb-2 uppercase': level === 0,
+          'font-medium text-xs rounded inline px-1 py-0.5 text-white/90': level === 1
         }">
         {{item.label}}
       </div>
-      <navigation-list-item v-for="child in item.children" :key="child.key" :item="child" :level="level + 1"/>
+      <template v-if="Array.isArray(item.children) && item.children.length">
+        <navigation-list-item
+          v-for="child in item.children"
+          :key="child.key"
+          :item="child"
+          :level="level + 1"/>
+      </template>
+      <span v-else class="italic text-xs opacity-70 -mt-2 ml-2 block">coming soon...</span>
     </div>
 
   </template>
@@ -37,5 +44,5 @@
 <script lang="ts" setup>
 import { NavItem } from '../types'
 
-const props = defineProps<{ item: NavItem, level: number }>()
+defineProps<{ item: NavItem, level: number }>()
 </script>
