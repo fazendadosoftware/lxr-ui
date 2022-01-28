@@ -31,10 +31,10 @@
                 leave-active-class="transition-opacity">
                 <div
                   v-if="getSortingDirection(column) !== null"
-                  class="absolute -right-2 content-arrow-up h-2.5"
+                  class="absolute -right-2 h-2.5"
                   :class="{
-                    'content-arrow-up': getSortingDirection(column) === 'asc',
-                    'content-arrow-down': getSortingDirection(column) === 'desc'
+                    'arrow-up': getSortingDirection(column) === 'asc',
+                    'arrow-down': getSortingDirection(column) === 'desc'
                   }"/>
               </transition>
             </div>
@@ -193,3 +193,12 @@ const sortEvtHandler = (column: LxrColumn) => {
 }
 
 </script>
+
+<style scoped>
+.arrow-up {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAMAAADJ7yrpAAAAKlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKE86IAAAADXRSTlMABBEmRGprlJW72e77tTkTKwAAAFNJREFUeAHtzjkSgCAUBNHPgsoy97+ulGXRqJE5L+xkxoYt2UdsLb5bqFINz+aLuuLn5rIu2RkO3fZpWENimNgiw6iBYRTPMLJjGFxQZ1hxxb/xBI1qC8k39CdKAAAAAElFTkSuQmCC");
+}
+.arrow-down {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAMAAADJ7yrpAAAAKlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKE86IAAAADXRSTlMABBEmRGprlJW72e77tTkTKwAAAFJJREFUeAHtzjkSgCAQRNFmQYUZ7n9dKUvru0TmvPAn3br0QfgdZ5xx6x+rQn23GqTYnq1FDcnuzZIO2WmedVqIRVxgGKEyjNgYRjKGkZ1hFIZ3I70LyM0VtU8AAAAASUVORK5CYII=");
+}
+</style>
