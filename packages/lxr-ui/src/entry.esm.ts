@@ -1,5 +1,4 @@
 import { App, Plugin } from 'vue'
-import 'tailwindcss/tailwind.css'
 // Import vue components
 import * as components from '@/lib-components/index'
 
