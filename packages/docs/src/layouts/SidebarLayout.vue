@@ -29,7 +29,7 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex-1 flex flex-col min-h-0 text-white shadow-lg shadow-leanix-blue">
+      <div class="flex-1 flex flex-col min-h-0 text-white">
         <div class="flex-1 flex flex-col overflow-y-auto">
           <div class="flex flex-col justify-center items-center pt-4 pb-6 px-6 space-y-4">
             <router-link
@@ -42,7 +42,7 @@
               :to="{ name: Routes.Github }"
               custom>
               <button
-                class="group w-full flex items-center justify-center rounded bg-leanix-blue text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
+                class="group w-full flex items-center justify-center rounded bg-leanix-blue-dark text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
                 @click="navigate">
                 <github-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
                 Github
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="min-h-screen md:pl-64 flex flex-col flex-1 bg-gradient-to-r from-leanix-blue to-transparent">
+    <div class="min-h-screen md:pl-64 flex flex-col flex-1 bg-gradient-to-r from-leanix-blue-dark to-blue-500 via-blue-700">
       <div class="sticky top-0 z-10 md:hidden">
         <button
           type="button"

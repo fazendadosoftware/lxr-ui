@@ -15,6 +15,6 @@ import GithubCorner from '@/components/GithubCorner.vue'
 
 <style>
 .text-shadow {
-  text-shadow: 1px 1px 2px #71717A;
+  text-shadow: 1px 1px 2px #1F2937;
 }
 </style>

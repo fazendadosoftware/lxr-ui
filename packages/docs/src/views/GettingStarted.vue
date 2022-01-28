@@ -4,19 +4,7 @@
       Getting started
     </template>
     <template #default>
-      <instructions-list />
-      <div>
-        <h3 v-text="'1. Start by installing the library with NPM or Yarn.'"/>
-        <code-box :code="installCode" language="bash" class="mx-auto"/>
-        <h3 v-text="'2.a) You can import the entire library at once...'" />
-        <code-box :code="importingEntireLibrary" language="javascript" filename="src/main.js" class="mx-auto"/>
-        <h3 v-text="'2.b) or just the components you need.'" />
-        <code-box :code="importingIndividualComponents" language="javascript" filename="src/main.js" class="mx-auto"/>
-        <h3 v-text="'3) If you want to make use of Tailwindcss JIT capability...'" />
-        <code-box :code="installTailwindCSS" language="bash" class="mx-auto"/>
-        <code-box :code="importingIndividualComponents" language="javascript" filename="src/main.js" class="mx-auto"/>
-        <code-box :code="importingIndividualComponents" language="javascript" filename="src/main.js" class="mx-auto"/>
-      </div>
+      <instructions-list class="mt-16"/>
     </template>
   </content-template>
 </template>

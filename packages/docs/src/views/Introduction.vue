@@ -4,7 +4,8 @@
       Introduction
     </template>
     <template #default>
-      <h2>Hi there Developer!</h2>
+      <div>
+        <h2>Hi there Developer!</h2>
         <p>
           <b>Lxr-UI</b> is a Component Library for Vue 3. It is intended to speed up the development process of LeanIX Custom Reports.
           <br>We try as much as possible to mimic the look and feel of the native LeanIX UI in our components, so that you can create professionally looking reports
@@ -24,6 +25,7 @@
             here
           </a>.
         </p>
+      </div>
     </template>
   </content-template>
 </template>
