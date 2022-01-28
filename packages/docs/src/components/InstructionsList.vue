@@ -9,18 +9,43 @@
         <h4 class="text-sm leading-6 text-slate-900 font-semibold mb-2 dark:text-slate-200" v-text="instruction.title" />
         <div class="prose prose-slate prose-sm dark:prose-dark" v-html="instruction.description" />
       </div>
-      <div class="relative z-10 -ml-10 col-span-3 bg-slate-800 rounded-xl shadow-lg xl:ml-0 dark:shadow-none dark:ring-1 dark:ring-inset dark:ring-white/10"><div class="relative flex text-slate-400 text-xs leading-6"><div class="mt-2 flex-none text-sky-300 border-t border-b border-t-transparent border-b-sky-300 px-4 py-1 flex items-center">Terminal</div><div class="flex-auto flex pt-2 rounded-tr-xl overflow-hidden"><div class="flex-auto -mr-px bg-slate-700/50 border border-slate-500/30 rounded-tl"></div></div><div class="absolute top-2 right-0 h-8 flex items-center pr-4"><div class="relative flex -mr-2"><button type="button" class="text-slate-500 hover:text-slate-400"><svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-8 h-8"><path d="M13 10.75h-1.25a2 2 0 0 0-2 2v8.5a2 2 0 0 0 2 2h8.5a2 2 0 0 0 2-2v-8.5a2 2 0 0 0-2-2H19"></path><path d="M18 12.25h-4a1 1 0 0 1-1-1v-1.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.5a1 1 0 0 1-1 1ZM13.75 16.25h4.5M13.75 19.25h4.5"></path></svg></button></div></div></div><div class="relative"><pre class="text-sm leading-6 text-slate-50 flex ligatures-none overflow-auto"><code class="flex-none min-w-full p-5"><span class="flex"><svg viewBox="0 -9 3 24" aria-hidden="true" class="flex-none overflow-visible text-pink-400 w-auto h-6 mr-3"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="flex-auto">npm install -D tailwindcss</span></span><span class="flex"><svg viewBox="0 -9 3 24" aria-hidden="true" class="flex-none overflow-visible text-pink-400 w-auto h-6 mr-3"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="flex-auto">npx tailwindcss init</span></span></code></pre></div></div>
+      <div class="relative z-10 -ml-10 col-span-3 bg-slate-800 rounded-xl shadow-lg xl:ml-0 dark:shadow-none dark:ring-1 dark:ring-inset dark:ring-white/10">
+        <div class="relative flex text-slate-400 text-xs leading-6">
+          <div class="mt-2 flex-none text-sky-300 border-t border-b border-t-transparent border-b-sky-300 px-4 py-1 flex items-center">
+            Terminal
+          </div>
+          <div class="flex-auto flex pt-2 rounded-tr-xl overflow-hidden">
+            <div class="flex-auto -mr-px bg-slate-700/50 border border-slate-500/30 rounded-tl"/>
+          </div>
+          <div class="absolute top-2 right-0 h-8 flex items-center pr-4">
+            <div class="relative flex -mr-2">
+              <button type="button" class="text-slate-500 hover:text-slate-400">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-8 h-8">
+                  <path d="M13 10.75h-1.25a2 2 0 0 0-2 2v8.5a2 2 0 0 0 2 2h8.5a2 2 0 0 0 2-2v-8.5a2 2 0 0 0-2-2H19"></path><path d="M18 12.25h-4a1 1 0 0 1-1-1v-1.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.5a1 1 0 0 1-1 1ZM13.75 16.25h4.5M13.75 19.25h4.5"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <highlightjs :language="'bash'" :code="installCode" class="codebox"/>
+      </div>
     </li>
   </ol>
 </template>
 
 <script lang="ts" setup>
+import 'highlight.js/lib/common'
+// import javascript from 'highlight.js/lib/languages/javascript'
+import hljsVuePlugin from '@highlightjs/vue-plugin'
+
 export interface Instruction {
   title: string
   description: string
   filename?: string
   code: string
 }
+
+const { component: Highlightjs } = hljsVuePlugin
 
 const instructions: Instruction[] = [
   {
@@ -30,4 +55,17 @@ const instructions: Instruction[] = [
     code: `npm install -D tailwindcss\npx tailwindcss init`
   }
 ]
+
+const installCode = `# NPM
+npm install lxr-ui
+# Yarn
+yarn add lxr-ui
+`
 </script>
+
+<style lang="stylus">
+
+pre.codebox
+  & > code.hljs
+    background transparent
+</style>

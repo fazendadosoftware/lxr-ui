@@ -5,7 +5,7 @@
         Title
       </slot>
     </h1>
-    <div class="bg-white px-8 sm:rounded-md shadow overflow-auto pb-6">
+    <div>
       <slot />
     </div>
   </article>
