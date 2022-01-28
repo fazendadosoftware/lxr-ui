@@ -1,6 +1,6 @@
 {
   "name": "lxr-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Vue Component Library for LeanIX Custom Reports",
   "main": "dist/lxr-ui.ssr.js",
   "browser": "dist/lxr-ui.esm.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/src/entry.esm.d.ts",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/lib-components/**/*"
   ],
   "sideEffects": false,
   "scripts": {
