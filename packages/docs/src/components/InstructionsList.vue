@@ -56,7 +56,7 @@ import App from './App.vue'
 import LxrUi from 'lxr-ui'
 import 'lxr-ui/dist/lxr-ui.css'
 
-const app = createApp(App)
+createApp(App)
   .use(LxrUi)
   .mount('#app')
     `
@@ -71,7 +71,7 @@ import App from './App.vue'
 import { LxrTable } from 'lxr-ui'
 import 'lxr-ui/dist/lxr-ui.css'
 
-const app = createApp(App)
+createApp(App)
   .component('lxr-table', LxrUi)
   .mount('#app')
 `
