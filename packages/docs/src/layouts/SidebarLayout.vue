@@ -27,7 +27,7 @@
     </transition-root>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+    <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 border-r border-r-white/10">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex-1 flex flex-col min-h-0 text-white">
         <div class="flex-1 flex flex-col overflow-y-auto">

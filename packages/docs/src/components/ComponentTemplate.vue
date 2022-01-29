@@ -1,13 +1,18 @@
 <template>
-  <article class="component-article">
-    <h1 class="px-8 sm:px-0 text-shadow !text-white" v-text="title" />
+  <article class="prose prose-a:text-yellow-300 prose-a:underline prose-a:font-bold prose-h1:text-white prose-h2:text-sky-300 prose-h2:py-4 prose-h2:px-6 prose-h2:m-0 prose-p:text-white max-w-none -mt-6 sm:mt-0 px-8 py-0">
+    <h1 class="text-shadow px-4 sm:px-0 sm:mt-8 tracking-wider" v-text="title" />
     <div v-if="demoComponent" class="section-container p-8">
       <component :is="demoComponent" />
     </div>
     <div v-for="(example, i) in examples" :key="i" class="section-container">
-      <h2 class="px-8">{{example.title}}</h2>
-      <div class="py-2 px-8 mb-4 overflow-hidden">
-        <component :is="example.component" />
+      <div class="absolute top-3.5 right-3 px-5 pb-1 pt-6 transform rotate-45 translate-x-1/2 -translate-y-1/2 bg-leanix-blue-dark text-white text-xs">
+        example
+      </div>
+      <h2 class="tracking-wide !text-yellow-300">{{example.title}}</h2>
+      <div class="px-4">
+        <div class="bg-white rounded-md overflow-hidden">
+          <component :is="example.component" />
+        </div>
       </div>
       <div
         class="relative overflow-y-hidden transition-[max-height] ease-in-out duration-[0.4s] mx-8 mb-4 sm:rounded"
@@ -28,7 +33,7 @@
         </button>
       </div>
       <button
-        class="w-full border-t flex justify-center items-center cursor-pointer text-gray-800 hover:bg-gray-100 transition-colors py-2"
+        class="w-full bg-slate-700/50 border-t border-slate-500/30 flex justify-center items-center cursor-pointer text-slate-500 hover:text-slate-400 transition-colors py-2"
         @click="codeExpandedIndex[i] = !codeExpandedIndex[i]">
         <div class="relative text-sm font-medium">
           {{ !codeExpandedIndex[i] ? 'Show' : 'Hide'}} code
@@ -77,12 +82,9 @@ const copyToClipboard = async (code: string) => {
 </script>
 
 <style scoped>
-.component-article {
-  @apply prose prose-a:text-blue-600 prose-a:font-bold prose-a:no-underline prose-h2:mt-8 prose-h2:mb-4 prose-pre:m-0 prose-pre:p-0 prose-pre:rounded-none max-w-none;
-}
-  
+
 .section-container {
-  @apply bg-white sm:rounded-md shadow overflow-auto mb-4 sm:mb-8;
+  @apply bg-slate-800 rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-8 relative;
 }
 
 </style>
