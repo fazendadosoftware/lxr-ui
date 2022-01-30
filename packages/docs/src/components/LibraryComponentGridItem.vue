@@ -8,7 +8,7 @@
       @click="navigate">
       <div class="flex space-x-2 items-center">
         <h3 class="flex items-center text-sm sm:text-lg text-gray-700">
-          <span v-if="component.icon" class="material-icons material-icons-outlined mr-1 text-sm sm:text-xl">
+          <span v-if="component.icon" class="material-icons material-icons-outlined mr-1 text-sm sm:text-base">
             {{ component.icon }}
           </span>
           {{component.label}}

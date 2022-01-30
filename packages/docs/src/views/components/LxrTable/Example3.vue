@@ -25,8 +25,8 @@ export const meta: ComponentMeta = {
   </div>
 </template>
 
-
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { LxrTable } from 'lxr-ui'
 import { LxrColumn } from 'lxr-ui/dist/types/src/lib-components/LxrTable.vue'
 import Chance from 'chance'
@@ -37,6 +37,8 @@ const generateRow = () => ({
   name: chance.name(),
   jobTitle: chance.profession(),
 })
+
+const generateRows = (count: number) => [...Array(count).keys()].map(generateRow)
 
 const columns: LxrColumn[] = [
   { key: 'name', label: 'Name' },

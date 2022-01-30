@@ -37,6 +37,7 @@ export const meta: ComponentMeta = {
 
 
 <script lang="ts" setup>
+import { ref, unref, defineComponent } from 'vue'
 import { LxrTable } from 'lxr-ui'
 import { LxrColumn } from 'lxr-ui/dist/types/src/lib-components/LxrTable.vue'
 import Chance from 'chance'
@@ -49,10 +50,11 @@ const generateRow = () => ({
   country: chance.country({ full: true })
 })
 
+const generateRows = (count: number) => [...Array(count).keys()].map(generateRow)
+
 const selectedRow = ref<any>(null)
 
 const ActionsCellComponent = defineComponent({
-  // eslint-disable-next-line vue/require-prop-types
   props: ['row', 'emit', 'selectedRow'],
   template: \`
     <div class="flex justify-center py-0.5">
