@@ -47,3 +47,19 @@ export interface ComponentEvent {
   callback: string
   description: string
 }
+
+export interface TutorialMeta {
+  id: string
+  title: string
+  shortDescription: string
+}
+
+export interface TutorialSection {
+  title: string
+  description: string
+  content: string
+}
+export interface Tutorial extends TutorialMeta {
+  description: string
+  content: TutorialSection[]
+}

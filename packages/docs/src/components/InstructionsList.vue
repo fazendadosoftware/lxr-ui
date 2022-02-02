@@ -1,5 +1,5 @@
 <template>
-  <ol class="not-prose list-none m-0 p-0 relative space-y-2" style="counter-reset:step;">
+  <ol class="not-prose list-none m-0 p-0 relative space-y-2 py-1" style="counter-reset:step;">
     <li
       v-for="(instruction, i) in instructions"
       :key="i"

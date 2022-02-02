@@ -4,7 +4,7 @@
       Introduction
     </template>
     <template #default>
-      <div>
+      <div class="text-shadow">
         <h2>Hi there Developer!</h2>
         <p>
           <b>Lxr-UI</b> is a Component Library for Vue 3. It is intended to speed up the development process of LeanIX Custom Reports.

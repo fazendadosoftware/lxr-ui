@@ -1,4 +1,3 @@
-import { defineAsyncComponent } from 'vue'
 import NestedRouterView from '@/views/NestedRouterView.vue'
 import { NavItem } from '../types'
 
@@ -8,7 +7,9 @@ export enum Routes {
   GettingStarted = 'gettingStarted',
   LxrTable = 'lxrTable',
   Github = 'github',
-  Twitter = 'twitter'
+  Twitter = 'twitter',
+  Tutorials = 'tutorials',
+  Tutorial = 'tutorial'
 }
 
 interface LibraryComponentCategoryIndex {
@@ -75,9 +76,25 @@ const routes = [
         component: () => import('@/views/GettingStarted.vue')
       },
       {
-        path: 'components',
+        path: 'component',
         component: NestedRouterView,
         children: components
+      },
+      {
+        path: 'tutorials',
+        component: NestedRouterView,
+        children: [
+          {
+            path: '',
+            name: Routes.Tutorials,
+            component: () => import('@/views/TutorialsMaster.vue')
+          },
+          {
+            path: 'tutorial/:id',
+            name: Routes.Tutorial,
+            component: () => import('@/views/TutorialsDetail.vue')
+          }
+        ]
       }
     ]
   },

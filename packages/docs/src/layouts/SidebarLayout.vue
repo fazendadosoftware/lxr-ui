@@ -44,7 +44,7 @@
               <button
                 class="group w-full flex items-center justify-center rounded bg-leanix-blue-dark text-white font-semibold border hover:text-leanix-blue-dark hover:bg-white transition-colors text-sm py-0.5"
                 @click="navigate">
-                <github-icon class="mr-1.5 w-4" :classes="'fill-white group-hover:fill-leanix-blue-dark transition-colors'" />
+                <github-icon class="mr-1.5 w-4" classes="fill-white group-hover:fill-leanix-blue-dark transition-colors" />
                 Github
               </button>
             </router-link>
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="min-h-screen md:pl-64 flex flex-col flex-1 bg-gradient-to-r from-leanix-blue-dark to-blue-500 via-blue-700">
+    <div class="h-screen md:pl-64 flex flex-col bg-gradient-to-r from-leanix-blue-dark to-blue-500 via-blue-700">
       <div class="sticky top-0 z-10 md:hidden">
         <button
           type="button"
@@ -65,7 +65,7 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main class="flex-1 container py-8 sm:px-8 mx-auto max-w-[960px]">
+      <main class="overflow-hidden flex-1 flex flex-col container py-8 sm:px-8 mx-auto max-w-[960px]">
         <router-view v-slot="{ Component }">
           <transition
             enter-from-class="opacity-0"
@@ -87,7 +87,7 @@
 import { ref, unref } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import { DialogOverlay, TransitionChild, TransitionRoot, Dialog as TDialog } from '@headlessui/vue'
-import { MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { MenuIcon } from '@heroicons/vue/outline'
 import { Routes } from '../router'
 import GithubIcon from '@/components/GithubIcon.vue'
 import NavigationList from '@/components/NavigationList.vue'

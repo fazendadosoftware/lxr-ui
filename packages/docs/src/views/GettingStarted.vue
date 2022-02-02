@@ -4,7 +4,7 @@
       Getting started
     </template>
     <template #default>
-      <instructions-list class="mt-16"/>
+      <instructions-list class="mt-8 overflow-auto px-4"/>
     </template>
   </content-template>
 </template>

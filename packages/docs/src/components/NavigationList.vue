@@ -31,7 +31,9 @@ const navItems: NavItem[] = [
   {
     key: 'tutorials',
     label: 'Tutorials',
-    children: []
+    children: [
+      { key: Routes.Tutorials, label: 'Online Catalog', icon: 'menu_book' }
+    ]
   }
 ]
 </script>
