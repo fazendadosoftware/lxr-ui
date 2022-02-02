@@ -12,7 +12,7 @@
           with minimal overhead.
         </p>
         <h2>How to Contribute</h2>
-        <p>
+        <p class="whitespace-pre">
           Contributions to <span class="font-bold">Lxr-UI</span> on Github are appreciated!
           <br>
           Whether you have

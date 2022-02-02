@@ -65,7 +65,7 @@
           <menu-icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <main class="overflow-hidden flex-1 flex flex-col container py-8 sm:px-8 mx-auto max-w-[960px]">
+      <main class="overflow-hidden flex-1 flex flex-col">
         <router-view v-slot="{ Component }">
           <transition
             enter-from-class="opacity-0"
