@@ -20,6 +20,8 @@ After the project is created run the commands in terminal:
 ```bash
 cd leanix-custom-report
 npm install lxr-ui
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
 You project folder should have now the following structure:
