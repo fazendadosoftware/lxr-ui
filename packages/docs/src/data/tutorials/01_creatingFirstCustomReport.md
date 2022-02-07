@@ -22,6 +22,7 @@ cd leanix-custom-report
 npm install lxr-ui
 ```
 
+You project folder should have now the following structure:
 ![alt text](//raw.githubusercontent.com/fazendadosoftware/lxr-ui/docs-v2/packages/docs/src/assets/img/tutorials/01/02.png)
 
 ### Add dependencies
