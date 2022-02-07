@@ -7,7 +7,7 @@ import ContentTemplate from './components/ContentTemplate.vue'
 import ComponentTemplate from './components/ComponentTemplate.vue'
 import App from './App.vue'
 
-import 'tailwindcss/tailwind.css'
+import './tailwind.css'
 import 'floating-vue/dist/style.css'
 import 'equal-vue/dist/style.css'
 // import 'animate.css'

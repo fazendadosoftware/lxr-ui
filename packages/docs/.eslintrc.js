@@ -22,6 +22,7 @@ module.exports = {
     'vue/max-attributes-per-line': 'off',
     'vue/one-component-per-file': 'off',
     'comma-dangle': 'error',
-    'no-useless-escape': 'off'
+    'no-useless-escape': 'off',
+    'no-trailing-spaces': 'error'
   }
 }

@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import { Routes } from '../router'
-import { getTutorialMetas } from '../data/tutorials'
+import { getTutorialMetas } from '../data'
 
 const meta = getTutorialMetas()
 </script>

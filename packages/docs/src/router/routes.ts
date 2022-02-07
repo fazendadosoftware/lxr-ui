@@ -68,7 +68,7 @@ const routes = [
       {
         path: 'introduction',
         name: Routes.Introduction,
-        component: () => import('@/views/Introduction.vue')
+        component: () => import('@/views/MarkdownTemplate.vue')
       },
       {
         path: 'getting-started',
@@ -90,9 +90,9 @@ const routes = [
             component: () => import('@/views/TutorialsMaster.vue')
           },
           {
-            path: 'tutorial/:id',
+            path: ':id',
             name: Routes.Tutorial,
-            component: () => import('@/views/TutorialsDetail.vue')
+            component: () => import('@/views/MarkdownTemplate.vue')
           }
         ]
       }

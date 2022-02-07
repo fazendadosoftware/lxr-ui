@@ -1,19 +1,9 @@
-import { createTutorialMeta, createTutorial } from '../../helpers'
+import { createTutorialMeta } from '../../helpers'
 
-export const meta = createTutorialMeta ({
+export default createTutorialMeta ({
+  // nanoid
   id: 'fNtTsbCNqFVsQ7geW7dtD',
   title: 'Creating a custom report',
-  shortDescription: 'In this tutorial we\ll show you how to create a custom report'
-})
-
-export default createTutorial({
-  ...meta,
-  description: 'This totirla jeio',
-  content: [
-    {
-      title: 'first section',
-      description: 'the section description...',
-      content: 'jvioerjoire'
-    }
-  ]
+  shortDescription: 'In this tutorial we\ll show you how to create a custom report',
+  filename: '01_creatingFirstCustomReport'
 })

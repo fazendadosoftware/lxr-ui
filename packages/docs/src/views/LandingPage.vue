@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto container space-y-4 sm:space-y-10 px-8 sm:pt-20">
+  <div class="mx-auto max-w-[960px] space-y-4 sm:space-y-10 px-8 sm:pt-20">
     <!-- hero section -->
     <section class="max-w-none prose flex flex-col items-center sm:items-start">
       <lxr-ui-logo class="stroke-gray-600 fill-white drop-shadow h-10 stroke-1"/>
