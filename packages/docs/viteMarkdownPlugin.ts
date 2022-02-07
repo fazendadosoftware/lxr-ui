@@ -16,7 +16,8 @@ const sanitizeHtmlOptions: sanitizeHtml.IOptions = {
     code: ['class'],
     span: ['class'],
     img: ['src', 'alt'],
-    a: ['href', 'target']
+    a: ['href', 'target'],
+    p: ['class']
   }
 }
 

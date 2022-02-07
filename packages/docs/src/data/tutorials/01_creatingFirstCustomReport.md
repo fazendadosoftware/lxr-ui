@@ -11,7 +11,20 @@ You can find the source code for this report <a href="//www.google.com" target="
 ```bash
 npm init lxr@latest
 ```
+You'll be presented with a questionnaire.
 
+![alt text](//raw.githubusercontent.com/fazendadosoftware/lxr-ui/docs-v2/packages/docs/src/assets/img/tutorials/01/01.png)
+
+After the project is created run the commands in terminal:
+
+```bash
+cd leanix-custom-report
+npm install lxr-ui
+```
+
+![alt text](//raw.githubusercontent.com/fazendadosoftware/lxr-ui/docs-v2/packages/docs/src/assets/img/tutorials/01/02.png)
+
+### Add dependencies
 
 ### Create your thing
 
